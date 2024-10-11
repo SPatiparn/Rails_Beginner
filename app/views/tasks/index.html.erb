@@ -1,0 +1,40 @@
+<div class="container text-center mt-5">
+  <h1 class="display-4">TODOS</h1>
+  
+  <div class="card mx-auto" style="max-width: 400px;">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Incomplete</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Complete</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <%= form_with model: @new_task, local: true do |form| %>
+        <div class="input-group mb-3">
+          <%= form.text_field :title, class: "form-control", placeholder: "Enter task name" %>
+          <button class="btn btn-primary" type="submit">Create Todo</button>
+        </div>
+      <% end %>
+
+      <ul class="list-group">
+        <% @tasks.each do |task| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= task.title %>
+            <div>
+              <%= link_to complete_task_path(task), method: :patch, class: "btn btn-outline-success btn-sm" do %>
+                <i class="bi bi-check-circle"></i>
+              <% end %>
+              <%= link_to task_path(task), method: :delete, class: "btn btn-outline-danger btn-sm" do %>
+                <i class="bi bi-trash"></i>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

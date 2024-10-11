@@ -1,0 +1,30 @@
+@import "bootstrap";
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+  
+.todo-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+.todo-input {
+    margin-right: 10px;
+}
+
+body {
+    font-family: 'YourDesiredFont', sans-serif;
+    color: #000;
+}
+  
+h1 {
+    font-size: 2rem;
+    color: #007bff;
+}
+  
