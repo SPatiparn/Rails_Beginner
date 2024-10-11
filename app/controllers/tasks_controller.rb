@@ -23,7 +23,7 @@ class TasksController < ApplicationController
         end
     end
     
-    def show  # เพิ่มฟังก์ชันนี้
+    def show
         @task = Task.find(params[:id])
     end
       
